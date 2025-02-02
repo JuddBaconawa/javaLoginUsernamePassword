@@ -1,8 +1,8 @@
 //packages
 
 //imports
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 //main class called App
 public class App {
@@ -60,6 +60,11 @@ public class App {
 
     private static void pressAnyKeyToContinue(Scanner scanner) {
         System.out.println("Press any key to continue.");
+        scanner.nextLine();
+    }
+
+    private static void pressAnyKeyToExit(Scanner scanner) {
+        System.out.println("Press any key to exit");
         scanner.nextLine();
     }
 
