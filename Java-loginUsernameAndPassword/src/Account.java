@@ -6,8 +6,8 @@ import java.util.Arrays;
 public class Account {
 
     //account class attributes
-    private String username;
-    private char[] password;
+    private final String username;
+    private final char[] password;
     private int userId;
 
     //how to create an account
