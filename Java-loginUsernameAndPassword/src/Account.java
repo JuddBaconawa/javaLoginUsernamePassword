@@ -1,5 +1,4 @@
 //imports
-import java.util.ArrayList;
 import java.util.Arrays;
 
 //account class
@@ -10,24 +9,12 @@ public class Account {
     private final char[] password;
     private int userId;
 
+    
+
     //how to create an account
     public Account(String username, char[] password) {
         this.username = username;
         this.password = password;
-    }
-
-    public static boolean login(String username, char[] password, ArrayList<Account> accounts) {
-
-        //loggin true
-        for (Account account: accounts) {
-            if(account.getUsername().equals(username) && Arrays.equals(account.getPassword(), password)) {
-                return true;
-            }
-        }
-
-        //added a different return because it wasnt working before, probably due to the boolean.
-        return false;
-
     }
     
 
@@ -38,7 +25,8 @@ public class Account {
 
     //method to check for the inputed password
     public char[] getPassword() {
-        return password;
+        //return password; <== old version, new one promotes security by preventing exposure of the   password 
+        return Arrays.copyOf(password, password.length);
     }
 
 

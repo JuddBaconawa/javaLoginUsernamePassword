@@ -40,8 +40,9 @@ public class App {
             }
 
             //authentication check
-            loggedIn = Account.login(username, password.toCharArray(), account);
+            loggedIn = UserService.login(username, password.toCharArray(), account);
 
+            //if statement to handle login
             if (loggedIn) {
                 System.out.println("Log in succesful");
                 System.out.println("Welcome back " + username);
@@ -49,6 +50,8 @@ public class App {
                 System.out.println("Invalid input!");
                 pressAnyKeyToContinue(scanner);
             }
+
+            //Arrays.fill(password, '\0');
 
         }
 
@@ -59,11 +62,13 @@ public class App {
         scanner.close();
     }
 
+    //method to continue from a stop
     private static void pressAnyKeyToContinue(Scanner scanner) {
         System.out.println("Press any key to continue.");
         scanner.nextLine();
     }
 
+    //method to exit
     private static void pressAnyKeyToExit(Scanner scanner) {
         System.out.println("Press any key to exit");
         scanner.nextLine();
